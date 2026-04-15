@@ -2,6 +2,7 @@ import { useRef, useState, useEffect } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { Layers, Droplets, Shield, Link2, Route, FlaskConical, Sun, Atom, Wrench, ChevronRight } from 'lucide-react'
+import Threed from './threed'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -169,7 +170,9 @@ export default function ProductEcosystem() {
             style={{ background: `radial-gradient(ellipse at center, ${product.visual.hue}33 0%, #0E0E0E 70%)` }}
           >
             {/* Abstract product viz */}
-            <div className="relative w-48 h-48">
+
+            <Threed/>
+            {/* <div className="relative w-48 h-48">
               {[...Array(4)].map((_, i) => (
                 <div
                   key={i}
@@ -190,9 +193,10 @@ export default function ProductEcosystem() {
                   style={{ background: product.visual.hue, boxShadow: `0 0 40px ${product.visual.accent}66` }}
                 >
                   <Layers size={24} className="text-[#E5E2E1]" />
-                </div>
+                </div> 
               </div>
-            </div>
+            </div> 
+            <Threed/>
 
             {/* Expert tip */}
             {active === 'membranes' && (
